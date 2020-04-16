@@ -3,6 +3,16 @@ let computerScore = 0;
 let currentRoundNumber = 1;
 
 function generateTarget() {
-    return (Math.floor(Math.random() * 10));
+    return Math.floor(Math.random() * 10);
 }
 
+function compareGuesses(userGuess, computerGuess, targetNum) {
+    let userDiff = Math.abs(targetNum - userGuess);
+    let computerDiff = Math.abs(targetNum - computerGuess);
+    
+    if (userDiff === computerDiff || userDiff < computerDiff) {
+        return true;
+    } else if (computerDiff < userDiff) {
+        return false;
+    }
+}
