@@ -6,9 +6,13 @@ function generateTarget() {
     return Math.floor(Math.random() * 10);
 }
 
-function compareGuesses(userGuess, computerGuess, targetNum) {
-    let userDiff = Math.abs(targetNum - userGuess);
-    let computerDiff = Math.abs(targetNum - computerGuess);
+function getAbsoluteDistance(guess, target) {
+    return Math.abs(target - guess);
+}
+
+function compareGuesses(userGuess, computerGuess, target) {
+    let userDiff = getAbsoluteDistance(userGuess, target);
+    let computerDiff = getAbsoluteDistance(computerGuess, target);
     
     if (userDiff === computerDiff || userDiff < computerDiff) {
         return true;
