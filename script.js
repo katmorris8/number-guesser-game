@@ -15,7 +15,7 @@ function compareGuesses(userGuess, computerGuess, target) {
     let computerDiff = getAbsoluteDistance(computerGuess, target);
     
     return userGuess < 0 || userGuess > 9 ? alert('Your guess is out of range! Pick a number between 0 and 9.')
-    : userDiff === computerDiff || userDiff < computerDiff ? true 
+    : userDiff <= computerDiff ? true 
     : false;
 }
 
