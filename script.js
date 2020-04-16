@@ -14,21 +14,13 @@ function compareGuesses(userGuess, computerGuess, target) {
     let userDiff = getAbsoluteDistance(userGuess, target);
     let computerDiff = getAbsoluteDistance(computerGuess, target);
     
-    if (userGuess < 0 || userGuess > 9) {
-        alert('Your guess is out of range! Pick a number between 0 and 9.')
-    } else if (userDiff === computerDiff || userDiff < computerDiff) {
-        return true;
-    } else if (computerDiff < userDiff) {
-        return false;
-    }
+    return userGuess < 0 || userGuess > 9 ? alert('Your guess is out of range! Pick a number between 0 and 9.')
+    : userDiff === computerDiff || userDiff < computerDiff ? true 
+    : false;
 }
 
 function updateScore(winner) {
-    if (winner === 'human') {
-        humanScore += 1;
-    } else if (winner === 'computer') {
-        computerScore += 1;
-    }
+    winner === 'human' ? humanScore += 1 : computerScore += 1;
 }
 
 function advanceRound() {
